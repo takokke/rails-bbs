@@ -115,3 +115,12 @@
     display: flex;
     margin-top: 10px;
   }
+
+  a {
+    text-decoration: none;
+    color: #495057;
+  }
+
+  .go_index {
+    float: right;
+  }

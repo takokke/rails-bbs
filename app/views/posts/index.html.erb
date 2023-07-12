@@ -6,18 +6,14 @@
 
 
 <ul>
-    <% @posts.each do |post|%> 
-    <!-- = とすると値をかえしてしまう -->
+    <% @posts.each do |post|%>
+        <%= link_to post_path(id: post.id) do%>
         <li>
             <h2><%= post.title %></h2>
-            <p><%= post.content %></p>
             <span>
                 <small><%= post.created_at %></small>
             </span>
-            <div class="edit-delete-wrapper">
-                <%=  link_to "編集", edit_post_path(post), class: "link-button" %>
-                <%= button_to "削除", post_path(post), method: :delete, class: "link-delete-button" %>
-            </div>
         </li>
+        <% end %>
     <% end %>
 </ul>
