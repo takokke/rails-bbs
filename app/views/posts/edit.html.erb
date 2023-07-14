@@ -1,5 +1,11 @@
 <h1>投稿編集</h1>
 
+<ul>
+<% @post.errors.full_messages.each do |message|%>
+<li><%=message%></li>
+<%end%>
+</ul>
+
 <%= form_with model: @post, html: {class: "form-container"} do |form| %>
     <div class="form-input">
     <%= form.label :title %> <%= form.text_field :title %>
